@@ -1,0 +1,22 @@
+int red = 13;
+int blue = 10;
+int butao = 2;
+
+void setup()
+{
+  pinMode(red, OUTPUT);
+  pinMode(blue, OUTPUT);
+  pinMode(butao, INPUT);
+}
+
+void loop()
+{
+  if(digitalRead(butao) == HIGH){
+  	digitalWrite(red, HIGH);
+    digitalWrite(blue, LOW);
+  }
+  else{
+    digitalWrite(red, LOW);
+  	digitalWrite(blue, HIGH);
+  }
+}

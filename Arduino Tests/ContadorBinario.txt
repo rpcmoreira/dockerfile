@@ -1,0 +1,26 @@
+int saida = 11;
+int dados = 12;
+int dt = 500;
+int relogio = 9;
+
+byte LEDS = 0b00000000;
+
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(saida, OUTPUT);
+  pinMode(dados, OUTPUT);
+  pinMode(relogio, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(saida,LOW);
+  shiftOut(dados, relogio, LSBFIRST,LEDS);
+  digitalWrite(saida,HIGH);
+  Serial.println(LEDS);
+  
+  delay(dt);
+  LEDS=LEDS+1;
+}
